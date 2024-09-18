@@ -4,10 +4,13 @@ public class CharacterManager
 {
     private readonly IInput _input;
     private readonly IOutput _output;
-    private readonly string _filePath = "input.csv";
+    //From Template
+    //  private readonly string _filePath = "input.csv";
 
-    private string[] lines;
+    //From Template
+    //  private string[] lines;
 
+    
     public CharacterManager(IInput input, IOutput output)
     {
         _input = input;
@@ -16,9 +19,11 @@ public class CharacterManager
 
     public void Run()
     {
+        
         _output.WriteLine("Welcome to Character Management");
 
-        lines = File.ReadAllLines(_filePath);
+        //From Template
+        //  lines = File.ReadAllLines(_filePath);
 
         while (true)
         {
@@ -53,6 +58,15 @@ public class CharacterManager
     public void DisplayCharacters()
     {
         // TODO: Implement displaying characters from the CSV file
+        CharacterReader characterReader = new CharacterReader();
+        characterReader.ReadFile();
+        characterReader.PopulateCharacters();
+
+        for (int i = 0; i < characterReader.Characters.Count; i++)
+        {
+            Character? character = characterReader.Characters[i];
+            Console.WriteLine(character.Name);
+        }
     }
 
     public void AddCharacter()
