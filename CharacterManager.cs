@@ -59,7 +59,7 @@ public class CharacterManager
     {
         // TODO: Implement displaying characters from the CSV file
         CharacterReader characterReader = new CharacterReader();
-        characterReader.ReadFile();
+        //characterReader.ReadFile();
         characterReader.PopulateCharacters();
 
         for (int i = 0; i < characterReader.Characters.Count; i++)

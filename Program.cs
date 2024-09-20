@@ -2,6 +2,8 @@
 
 class Program
 {
+
+    static List<Character> characters;
     static void Main()
     {
         var input = new ConsoleInput();
